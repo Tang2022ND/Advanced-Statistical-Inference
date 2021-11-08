@@ -160,6 +160,7 @@ x_test_nn <- scale(x_test_nn, center=x_mean, scale=x_sd)
 set.seed(7)
 nn2 <- neuralnet(St_Price~Age+Mileage+Fuel_TypeDiesel+Fuel_TypePetrol+HP+Weight, data=x_train_nn, hidden = c(6,4),
                  act.fct = "logistic")
+plot(nn2)
 ```
 
 We evaluate the prediction performance and see if the conclusion is the same as the one for log-scale prediction, where NN is more accurate than GAM and linear regression.
